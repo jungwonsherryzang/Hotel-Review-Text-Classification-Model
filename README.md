@@ -10,6 +10,8 @@ Each of team members selected RNN model with different class ratings. Having the
 ## DATA PREPROCESSING
 Text preprocessing was required to format the raw text in such a way that the RNN model could consume it as input. All punctuation was removed from the text because it added no linguistic value or context for the model to learn from. Furthermore, a collection of frequently used words, known as stopwords in the nltk (Natural Language Toolkit), were removed. Such words include, “the”, “a”, “an” and “in”, which once more are removed from the text because they add no sentiment value to the input. Removing these words helps to reduce the computational load by reducing the size of the corpus to be analyzed by the model. The text was also processed using stemming, which reduces each word down to its root with the purpose of improving computational performance. Following this, the text was tokenized to format each review in a list format. The tokenized reviews were then converted to sequences of integers. Each index integer corresponds with a word in the corpus.
 
+<img width="369" alt="class rating" src="https://user-images.githubusercontent.com/91277856/162642145-c4119002-6499-4a36-b040-0bdabedb4534.png">
+
 For an RNN model the input data was required to be in a sequence format of the same length. The tokenized data were firstly padded to size 200. This meant that each review was either extended or shrunk to a consistent length of 200 words.
 
 Summary of data preprocessing:
@@ -23,7 +25,8 @@ corpus.
 ## MODEL SELECTION
 Recurrent Neural Network (RNN) is a class of artificial neural network where connections between nodes form a directed graph along a sequence. This architecture allows RNN to exhibit temporal behavior and capture sequential data which makes it a more ‘natural’ approach when dealing with textual data since text is naturally sequential.
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+<img width="391" alt="rnn" src="https://user-images.githubusercontent.com/91277856/162642159-62c08aee-7cf3-4892-ba5a-7a968812a4c6.png">
+
 
 RNN is an ideal model for NLP text classification/generation and Sequence labelling. Natural Language (NL) is the language human uses for communication, which is a contrast to constructed language that is made artificially by human such as programming language. Natural Language Processing (NLP) is a main process of Artificial Intelligence (AI) that machines like computer can analyze and process human’s language phenomenon.
 
@@ -31,11 +34,10 @@ RNN is well-suited to multi-class text classification because it exhibits tempor
 
 ## OUTCOME
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+<img width="349" alt="lstm" src="https://user-images.githubusercontent.com/91277856/162642165-21620545-cc6d-4e85-a3c3-34cf60ece548.png">
 
 Embedding Layer
 The embedding layer was initialized with random weights and then learns an embedding code for each word in the training corpus. The input dimension defines the total vocabulary size + 1 of the training data, i.e., the total number of unique words that an embedding will be created for. The output dimension defines the vector space in which the words will be embedded, for each word. The input length for this layer corresponds with the maximum sequence length defined earlier to be 200 as a default value.
-
 
 
 Bidirectional LSTM layers
@@ -59,8 +61,6 @@ For this model, there were three possible classes to categorize the reviews. The
 Model Performance
 Without tuning, the model performed reasonably well achieving a test accuracy and loss of 0.7729 and 0.8078, respectively.
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
-
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
-
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+<img width="346" alt="accuracy" src="https://user-images.githubusercontent.com/91277856/162642225-f28364c3-aa59-421c-a1f6-131705c3c30c.png">
+<img width="346" alt="loss" src="https://user-images.githubusercontent.com/91277856/162642222-6460d55f-7f0a-44da-b8a0-d3f51e5c464a.png">
+<img width="346" alt="outcome" src="https://user-images.githubusercontent.com/91277856/162642228-77509f14-bbca-4a87-ab4a-e6f5ff5be8c4.png">
